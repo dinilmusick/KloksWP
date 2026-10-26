@@ -1,1 +1,5 @@
-{"name":"dinilmusick/klokswp","type":"library","autoload":{"psr-4":{"KloksWP\\":"src/"}},"require":{"php":">=8.1","dinilmusick/krnlwp":"^0.1"}}
+{
+  "name":"ultrst-armada/klokswp","description":"KloksWP reusable WordPress backend service and state library built on KrnlWP",
+  "type":"library","license":"MIT","autoload":{"psr-4":{"KloksWP\\":"src/"}},
+  "require":{"php":">=8.2","ultrst-armada/krnlwp":"^0.1","symfony/http-client":"^7.3","symfony/workflow":"^7.3"}
+}
