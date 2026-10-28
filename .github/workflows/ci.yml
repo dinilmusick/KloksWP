@@ -8,4 +8,5 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with: {php-version: '8.2'}
       - run: php tools/validate.php
+      - run: php tests/canonical-services.php
       - run: composer validate --strict
