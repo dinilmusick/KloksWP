@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Store;
 final class Store {
     public function __construct(private array $data=[]){}

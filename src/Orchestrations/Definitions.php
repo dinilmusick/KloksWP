@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Orchestrations;
 final class Definitions {
     public static function all():array {

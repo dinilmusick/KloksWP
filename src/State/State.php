@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\State;
 final class State {
     public function __construct(private array $data=[]){}

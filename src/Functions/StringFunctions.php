@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Functions;
 final class StringFunctions {
  public static function camel(string $s):string{$s=preg_replace('/[-_]+/',' ',$s);$s=preg_replace('/[^\w\s]/','',$s);$s=ucwords(strtolower($s));return lcfirst(str_replace(' ','',$s));}

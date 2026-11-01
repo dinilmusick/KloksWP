@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Functions;
 final class Events {
  private static array $listeners=[]; private static array $buffer=[]; private const MAX=200;

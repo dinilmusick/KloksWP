@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Functions;
 final class Functions {
     public static function map(array $items,callable $fn):array{return array_map($fn,$items);}

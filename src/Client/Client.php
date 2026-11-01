@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Client;
 final class Client {
     public function __construct(private string $namespace='klokswp/v1'){}

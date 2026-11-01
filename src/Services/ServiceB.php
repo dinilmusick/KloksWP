@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Services;
 use KrnlWP\Service\{Definition,ServiceGenerators,WordPressService};
 final class ServiceB {

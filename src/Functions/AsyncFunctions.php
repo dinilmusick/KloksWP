@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Functions;
 final class AsyncFunctions {
  public static function sleep(int $ms):void{if($ms>0)usleep($ms*1000);}

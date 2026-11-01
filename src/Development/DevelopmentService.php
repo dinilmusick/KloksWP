@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Development;
 final class DevelopmentService {
     public function environment():array{return ['debug'=>defined('WP_DEBUG')&&WP_DEBUG,'php'=>PHP_VERSION,'wordpress'=>get_bloginfo('version')];}

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Backend;
 final class StorageService {
     public function option(string $key,mixed $default=null):mixed{return get_option($key,$default);}

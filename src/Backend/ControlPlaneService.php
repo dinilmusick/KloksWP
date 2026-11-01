@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace KloksWP\Backend;
 final class ControlPlaneService {
     public function health():array{return ['status'=>'ok','wordpress'=>get_bloginfo('version'),'php'=>PHP_VERSION];}
