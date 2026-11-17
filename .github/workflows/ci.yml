@@ -16,3 +16,4 @@ jobs:
       - run: php tests/http-failclosed.php
       - run: php tests/connectivity-failclosed.php
       - run: php tests/workspace-capabilities.php
+      - run: php tests/fod-dag.php
