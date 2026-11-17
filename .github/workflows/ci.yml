@@ -13,3 +13,6 @@ jobs:
       - run: php tests/canonical-services.php
       - run: php tests/utilities.php
       - run: php tests/storage-metadata.php
+      - run: php tests/http-failclosed.php
+      - run: php tests/connectivity-failclosed.php
+      - run: php tests/workspace-capabilities.php
