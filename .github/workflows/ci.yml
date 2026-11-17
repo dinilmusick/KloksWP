@@ -12,3 +12,4 @@ jobs:
       - run: php tools/validate.php
       - run: php tests/canonical-services.php
       - run: php tests/utilities.php
+      - run: php tests/storage-metadata.php
