@@ -60,13 +60,24 @@ final class FodEvaluator {
             }
         }
 
+        // Preflight the complete DAG before any potentially side-effecting node runs.
         $queue = new \SplQueue();
         foreach ($definitions as $id => $_) if ($indegree[$id] === 0) $queue->enqueue($id);
-        $results = $initialInputs;
-        $processed = 0;
-
+        $ordered = [];
         while (!$queue->isEmpty()) {
             $id = $queue->dequeue();
+            $ordered[] = $id;
+            foreach ($outbound[$id] as $target) {
+                $indegree[$target]--;
+                if ($indegree[$target] === 0) $queue->enqueue($target);
+            }
+        }
+        if (count($ordered) !== count($definitions)) {
+            throw new \RuntimeException('Circular FOD graph dependency detected');
+        }
+
+        $results = $initialInputs;
+        foreach ($ordered as $id) {
             $node = $definitions[$id];
             $inputs = [];
             foreach ($inbound[$id] as $port => $source) {
@@ -87,14 +98,6 @@ final class FodEvaluator {
                     throw new \RuntimeException("FOD node '$id' failed: " . $error->getMessage(), 0, $error);
                 }
             }
-            $processed++;
-            foreach ($outbound[$id] as $target) {
-                $indegree[$target]--;
-                if ($indegree[$target] === 0) $queue->enqueue($target);
-            }
-        }
-        if ($processed !== count($definitions)) {
-            throw new \RuntimeException('Circular FOD graph dependency detected');
         }
         return $results;
     }
