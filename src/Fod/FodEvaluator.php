@@ -31,6 +31,9 @@ final class FodEvaluator {
             if (!is_string($type) || $type === '' || !is_array($node['config'] ?? [])) {
                 throw new \InvalidArgumentException("Invalid FOD node type or config: $id");
             }
+            if ($type !== 'pass' && !FodNodeProvider::has($type)) {
+                throw new \InvalidArgumentException("Unknown FOD node type: $type");
+            }
             $definitions[$id] = $node;
             $inbound[$id] = [];
             $outbound[$id] = [];
