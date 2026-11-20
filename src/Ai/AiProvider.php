@@ -59,7 +59,7 @@ class AiProvider
         if ($name === 'default' && isset(self::$providers['default'])) {
             return self::$providers['default'];
         }
-        throw new \\RuntimeException("AI provider is not registered: {$name}");
+        throw new \RuntimeException("AI provider is not registered: {$name}");
     }
 
     public static function has(string $name): bool
