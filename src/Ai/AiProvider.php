@@ -56,10 +56,10 @@ class AiProvider
         if (isset(self::$providers[$name])) {
             return self::$providers[$name];
         }
-        if (isset(self::$providers['default'])) {
+        if ($name === 'default' && isset(self::$providers['default'])) {
             return self::$providers['default'];
         }
-        return new MockAiProvider();
+        throw new \RuntimeException("AI provider is not registered: {$name}");
     }
 
     public static function has(string $name): bool

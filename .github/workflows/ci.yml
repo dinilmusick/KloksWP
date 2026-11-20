@@ -17,3 +17,4 @@ jobs:
       - run: php tests/connectivity-failclosed.php
       - run: php tests/workspace-capabilities.php
       - run: php tests/fod-dag.php
+      - run: php tests/ai-provider-registration-contract.php
